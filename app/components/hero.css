@@ -1,0 +1,6 @@
+.hero-content {
+  background-image: url(/hero-back.gif);
+  height: 350px;
+  width: 700px;
+  border-radius: 10%;
+}

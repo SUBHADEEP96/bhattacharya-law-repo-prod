@@ -1,0 +1,13 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: auto;
+}
+
+.bhatt__navbar-links_logo img {
+  width: 100px;
+  height: 80px;
+  object-fit: contain;
+  box-shadow: 0 4px 8px 0 white, 0 6px 20px 0 whitesmoke;
+}
