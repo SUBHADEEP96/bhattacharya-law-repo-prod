@@ -35,7 +35,7 @@ const Body = () => {
     return () => {
       clearTimeout(timer);
     };
-  }, [active]);
+  }, [active, handleNext]);
   return (
     <div className="container mx-auto">
       <section className="text-gray-600 body-font">
