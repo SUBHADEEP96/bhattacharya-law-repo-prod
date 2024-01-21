@@ -21,6 +21,13 @@ const Body = () => {
   ];
   const [active, setActive] = useState(0);
 
+  const handleNext = () => {
+    if (active === items.length - 1) {
+      setActive(0);
+    } else {
+      setActive((prev) => prev + 1);
+    }
+  };
   useEffect(() => {
     let timer = setTimeout(() => {
       handleNext();
@@ -29,13 +36,6 @@ const Body = () => {
       clearTimeout(timer);
     };
   }, [active]);
-  const handleNext = () => {
-    if (active === items.length - 1) {
-      setActive(0);
-    } else {
-      setActive((prev) => prev + 1);
-    }
-  };
   return (
     <div className="container mx-auto">
       <section className="text-gray-600 body-font">
