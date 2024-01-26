@@ -13,21 +13,14 @@ const BodyComponent = dynamic(() => import("./components/Body"), {
   loading: () => <p>Loading...</p>,
 });
 
-function Home({ userAccepted }: HomePageProps) {
+function Home() {
   return (
     <div className="container mx-auto px-5">
-      {userAccepted === true && (
-        <>
-          <HeroComponent />
-          <BodyComponent />
-        </>
-      )}
-      {userAccepted === false && (
-        <p className="text-lg">
-          Sorry, you are not allowed to access this page.
-        </p>
-      )}
+      <>
+        <HeroComponent />
+        <BodyComponent />
+      </>
     </div>
   );
 }
-export default withPopup(Home);
+export default Home;
