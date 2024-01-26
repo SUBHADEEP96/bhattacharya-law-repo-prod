@@ -4,6 +4,18 @@ import withPopup from "../../wrapper/withPopup";
 import { Reporting } from "@/types/Reporting";
 import client from "../sanity/client";
 import { reportings } from "../../data";
+
+declare global {
+  interface Array<T> {
+    toReversed(): T[];
+  }
+}
+
+if (!Array.prototype.toReversed) {
+  Array.prototype.toReversed = function <T>(): T[] {
+    return this.slice().reverse();
+  };
+}
 const Reportings = () => {
   const [reportData, setReportData] = useState<Reporting[]>([]);
   const [number, setNumber] = useState(1);
@@ -23,9 +35,6 @@ const Reportings = () => {
       setAscOrder((prev) => !prev);
     }
   };
-
-  let newArr = [...reportings];
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -48,18 +57,7 @@ const Reportings = () => {
     };
 
     fetchData();
-    newArr = [];
   }, [reportData]);
-  // console.log(reportData);
-  // const addData = useCallback(() => {
-  //   reportData.forEach((report) => {
-  //     reportings.push(report);
-  //   });
-  // }, [reportData]);
-
-  // useEffect(() => {
-  //   addData();
-  // }, [addData]);
   return (
     <div className="flex justify-center items-center">
       <div className="container mx-auto px-4 sm:px-20">
@@ -83,7 +81,7 @@ const Reportings = () => {
               </tr>
             </thead>
             <tbody>
-              {/* {reportings
+              {reportings
                 ?.toReversed()
                 ?.slice(number * 20 - 20, number * 20)
                 ?.map((tableData, index) => (
@@ -94,7 +92,7 @@ const Reportings = () => {
                     <td>{tableData?.Citation}</td>
                     <td>{tableData?.Court}</td>
                   </tr>
-                ))} */}
+                ))}
             </tbody>
           </table>
         </div>
