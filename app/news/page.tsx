@@ -88,4 +88,4 @@ const News = () => {
   );
 };
 
-export default withPopup(News);
+export default News;

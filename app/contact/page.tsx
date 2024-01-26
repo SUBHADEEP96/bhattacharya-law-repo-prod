@@ -122,4 +122,4 @@ const Contact = () => {
   );
 };
 
-export default withPopup(Contact);
+export default Contact;

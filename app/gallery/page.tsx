@@ -61,4 +61,4 @@ const Gallery = () => {
   );
 };
 
-export default withPopup(Gallery);
+export default Gallery;

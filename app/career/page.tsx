@@ -58,4 +58,4 @@ const Career = () => {
   );
 };
 
-export default withPopup(Career);
+export default Career;

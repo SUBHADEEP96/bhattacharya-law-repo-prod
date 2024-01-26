@@ -79,4 +79,4 @@ const Practices = () => {
   );
 };
 
-export default withPopup(Practices);
+export default Practices;

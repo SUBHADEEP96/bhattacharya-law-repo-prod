@@ -103,4 +103,4 @@ const Partners = () => {
   );
 };
 
-export default withPopup(Partners);
+export default Partners;
