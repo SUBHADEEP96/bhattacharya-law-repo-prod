@@ -83,7 +83,7 @@ const Reportings = () => {
               </tr>
             </thead>
             <tbody>
-              {reportings
+              {/* {reportings
                 ?.toReversed()
                 ?.slice(number * 20 - 20, number * 20)
                 ?.map((tableData, index) => (
@@ -94,7 +94,7 @@ const Reportings = () => {
                     <td>{tableData?.Citation}</td>
                     <td>{tableData?.Court}</td>
                   </tr>
-                ))}
+                ))} */}
             </tbody>
           </table>
         </div>
