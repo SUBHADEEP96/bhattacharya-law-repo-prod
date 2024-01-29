@@ -1,9 +1,8 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import "./header.css";
-//{ id: 2, name: "About", path: "/about" },
 const menuItems = [
   { id: 1, name: "Home", path: "/" },
 
@@ -19,10 +18,22 @@ const menuItems = [
 const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
+  // useEffect(() => {
+  //   const handleMenu = () => {
+  //     setToggleMenu(false);
+  //   };
+
+  //   window.addEventListener("mousedown", handleMenu);
+
+  //   return () => {
+  //     window.removeEventListener("mousedown", handleMenu);
+  //   };
+  // }, []);
+
   return (
     <div className="bhatt__navbar bg-black">
       <div className="bhatt__navbar-links">
-        <div className="bhatt__navbar-links_logo text-teal-50">
+        <div className="bhatt__navbar-links_log text-teal-50">
           <Link href="/">
             {" "}
             <img src="/logo.jpg" />{" "}
@@ -54,7 +65,7 @@ const Header = () => {
           <div className="bhatt__navbar-menu_container scale-up-center">
             <div className="bhatt__navbar-menu_container-links">
               {menuItems?.map((menuItem) => (
-                <p key={menuItem?.id}>
+                <p key={menuItem?.id} onClick={() => setToggleMenu(false)}>
                   <Link href={menuItem?.path}>{menuItem?.name}</Link>
                 </p>
               ))}
