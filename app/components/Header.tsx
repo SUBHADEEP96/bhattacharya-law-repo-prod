@@ -39,7 +39,11 @@ const Header = () => {
         <div className="bhatt__navbar-links_log text-teal-50">
           <Link href="/">
             {" "}
-            <img src="/logo.jpg" />{" "}
+            <img
+              src="/logo.jpg"
+              aria-label="Bhattacharyyas & Associates Logo"
+              alt="Bhattacharyyas & Associates Logo"
+            />{" "}
           </Link>
         </div>
         <div className="bhatt__navbar-links_container">

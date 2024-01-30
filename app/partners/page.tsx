@@ -3,7 +3,7 @@ import React, { useEffect, useState, lazy, Suspense } from "react";
 import client from "../sanity/client";
 import { Partners } from "@/types/Partners";
 import withPopup from "../../wrapper/withPopup";
-
+import Image from "next/image";
 const Partners = () => {
   const [partners, setPartners] = useState<Partners[]>([]);
 
@@ -51,10 +51,12 @@ const Partners = () => {
                   dangerouslySetInnerHTML={{ __html: partners[0]?.content }}
                 />
                 <a className="inline-flex items-center">
-                  <img
-                    alt="testimonial"
-                    src="https://dummyimage.com/106x106"
-                    className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
+                  <Image
+                    src="/profile.jpg"
+                    alt="Bhudhayan"
+                    width={100}
+                    height={100}
+                    style={{ borderRadius: "50%" }}
                   />
                   <span className="flex-grow flex flex-col pl-4">
                     <span className="title-font font-medium text-gray-900">
@@ -85,6 +87,13 @@ const Partners = () => {
                     src="https://dummyimage.com/107x107"
                     className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
                   />
+                  {/* <Image
+                    src="/sougata-th.jpeg"
+                    alt="Bhudhayan"
+                    width={100}
+                    height={100}
+                    style={{ borderRadius: "50%" }}
+                  /> */}
                   <span className="flex-grow flex flex-col pl-4">
                     <span className="title-font font-medium text-gray-900">
                       {partners[1]?.name}

@@ -5,14 +5,24 @@ import { Gallery } from "@/types/Gallery";
 import withPopup from "../../wrapper/withPopup";
 import Image from "next/image";
 const SingleImage = (props: any): any => {
+  let fallbackImageSrc = "https://dummyimage.com/300x200/000/fff.png";
   return (
     <>
       <div className="lg:w-1/3 sm:w-1/2 p-4">
         <div className="flex">
-          <img
+          <Image
             alt="gallery"
             className="img-gallery"
             src={urlFor(props?.image).url()}
+            width={400}
+            height={200}
+            placeholder="blur"
+            blurDataURL={urlFor(props?.image).url()}
+            onError={({ target }) => {
+              if (target instanceof HTMLImageElement) {
+                target.src = fallbackImageSrc;
+              }
+            }}
           />
         </div>
       </div>

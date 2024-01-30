@@ -56,7 +56,7 @@ const Body = () => {
                 <div className="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
                   <Image
                     src="/profile.jpg"
-                    alt=""
+                    alt="Bhudhayan"
                     width={100}
                     height={100}
                     style={{ borderRadius: "50%" }}
