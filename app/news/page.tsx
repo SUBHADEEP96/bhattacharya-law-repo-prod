@@ -18,7 +18,10 @@ const NewsCard = (props: any): any => {
           <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">
             {props?.title}
           </h2>
-          <p className="leading-relaxed">{props?.description}</p>
+          <p
+            className="leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: props?.description }}
+          />
           <Link
             className="text-indigo-500 inline-flex items-center mt-4"
             href={"news/" + props?.slug}

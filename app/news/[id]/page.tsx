@@ -11,7 +11,7 @@ const NewsContent = async ({ params }: any) => {
   );
   return (
     <section className=" body-font ">
-      <div className="container px-5  mx-auto portable-text w-[60%] my-4 text-[#020626]">
+      <div className="container px-10  mx-auto portable-text w-[100%] my-10 text-[#020626]">
         <PortableText value={res[0].content} />
       </div>
     </section>

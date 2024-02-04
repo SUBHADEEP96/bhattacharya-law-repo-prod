@@ -44,7 +44,46 @@ button {
   margin: 20px 0;
 }
 .img-gallery {
+  width: auto;
+  height: auto;
   aspect-ratio: 3/2;
   object-fit: contain;
   mix-blend-mode: color-burn;
+}
+
+.news__content {
+  text-wrap: balance;
+}
+
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* Ensure it stays in the middle even when content is short */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  z-index: 999; /* Ensure it appears above other content */
+}
+
+/* Spinner styling (adjust as desired) */
+.loading-indicator .spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
