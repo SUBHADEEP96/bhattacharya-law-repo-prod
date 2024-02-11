@@ -34,7 +34,7 @@ const Contact = () => {
     {
       id: "Kolkata",
       address:
-        "Ground Floor, Bhagabati Bhaban, 56, BK Paul Ave, Ahiritola,Shobhabazar, Kolkata, West Bengal 700005",
+        "Ground Floor, Bhagabati Bhaban, 56, BK Paul Avenue, Ahiritola, Kolkata - 700005",
       phone: "9432303309",
       email: "bhattacharyya.boudhayan@gmail.com",
     },
@@ -42,7 +42,7 @@ const Contact = () => {
       id: "Siliguri",
       address:
         "Haiderpara Main Rd, Ward 40, Haidar Para, Siliguri, West Bengal 734001",
-      phone: "9432303309",
+      phone: "9831803309",
       email: "bhattacharyya.boudhayan@gmail.com",
     },
   ];
