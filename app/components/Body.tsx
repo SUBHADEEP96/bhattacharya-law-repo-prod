@@ -18,6 +18,11 @@ const Body = () => {
       imageUrl: "/body.jpg",
       title: "BA images",
     },
+    {
+      id: 4,
+      imageUrl: "/uncle-hero.jpeg",
+      title: "BA images",
+    },
   ];
   const [active, setActive] = useState(0);
 
@@ -47,7 +52,7 @@ const Body = () => {
                 className="object-cover object-center h-full w-full"
                 src={items[active].imageUrl}
                 width={1200}
-                height={500}
+                height={600}
                 style={{ objectFit: "cover" }}
               />
             </div>
