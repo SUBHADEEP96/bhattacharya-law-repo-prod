@@ -89,7 +89,9 @@ const Gallery = () => {
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-20">
             <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">
-              Bhattacharya & Associates Gallery
+              <i>
+                <q>Moments...</q>
+              </i>
             </h1>
           </div>
           <div className="flex flex-wrap -m-4">
@@ -113,4 +115,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default withPopup(Gallery);

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { About } from "@/types/About";
 import client from "../sanity/client";
+import withPopup from "../../wrapper/withPopup";
 const About = () => {
   const [about, setAbout] = useState<About[]>([]);
   useEffect(() => {
@@ -41,4 +42,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default withPopup(About);

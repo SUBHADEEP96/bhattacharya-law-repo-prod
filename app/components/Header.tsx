@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState, useEffect, useRef } from "react";
-import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
+import { RiMenu3Line, RiCloseLine, RiRefreshFill } from "react-icons/ri";
 import "./header.css";
 
 const menuItems = [
@@ -32,6 +32,17 @@ const Header = () => {
       document.removeEventListener("mousedown", handleMenu);
     };
   }, []);
+  const handleRefresh = () => {
+    localStorage.removeItem("userAgreed");
+    if (
+      typeof window !== "undefined" &&
+      window.location &&
+      window.location.reload
+    ) {
+      window.location.reload();
+      window.location.href = "/";
+    }
+  };
 
   return (
     <div className="bhatt__navbar bg-black">
@@ -91,8 +102,18 @@ const Header = () => {
                 );
               })}
             </div>
+            <hr />
+            <button onClick={handleRefresh} className="text-white">
+              <RiRefreshFill color="#fff" size={27} />
+            </button>
           </div>
         )}
+      </div>
+
+      <div className="bhatt__navbar-refresh bhatt__navbar-menu_container-links">
+        <button onClick={handleRefresh} className="text-white">
+          <RiRefreshFill color="#fff" size={27} />
+        </button>
       </div>
     </div>
   );

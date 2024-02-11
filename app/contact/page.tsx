@@ -4,7 +4,10 @@ import withPopup from "../../wrapper/withPopup";
 import { MdLocationPin, MdMarkEmailRead } from "react-icons/md";
 import { IoCall } from "react-icons/io5";
 import Link from "next/link";
-const Contact = () => {
+interface PageProps {
+  agreed: boolean | null;
+}
+const Contact = ({ agreed }: PageProps) => {
   const [selectedLocation, setSelectedLocation] = useState("kolkata");
   let locationMap = [
     {
@@ -122,4 +125,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default withPopup(Contact);

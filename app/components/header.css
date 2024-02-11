@@ -133,3 +133,26 @@
     display: block;
   }
 }
+
+.bhatt__navbar-refresh {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Push the refresh button to the right */
+}
+
+.bhatt__navbar-refresh button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1050px) {
+  .bhatt__navbar-refresh {
+    display: none; /* Hide the refresh button on smaller screens */
+  }
+}

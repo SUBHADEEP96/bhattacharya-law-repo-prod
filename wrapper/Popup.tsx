@@ -1,41 +1,19 @@
-// components/Popup.tsx
-import { useState } from "react";
-
 interface PopupProps {
-  onClose: () => void;
-  onSave: (accepted: boolean) => void;
+  onAgree: () => void;
+  onDisagree: () => void;
 }
 
-function Popup({ onClose, onSave }: PopupProps) {
-  const [accepted, setAccepted] = useState(false);
-
-  const handleAccept = () => {
-    setAccepted(true);
-    onSave(true);
-    onClose();
-  };
-
-  const handleReject = () => {
-    setAccepted(false);
-    onSave(false);
-    onClose();
-  };
-
+function Popup({ onAgree, onDisagree }: PopupProps) {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-blur">
-      <div className="bg-white p-4 rounded-lg shadow-lg text-center w-300 h-300">
-        <p className="text-lg mb-4">Legal Contents..</p>
-        <p className="text-lg mb-4">Do you want to continue?</p>
-        <button
-          onClick={handleAccept}
-          className="bg-green-500 text-white px-4 py-2 m-2 rounded"
-        >
+      <div className="bg-white p-4 rounded-lg shadow-lg text-center h-screen sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 flex flex-col items-center justify-center">
+        <p className="text-lg mb-4">
+          Do you agree to the terms and conditions?
+        </p>
+        <button style={{ width: "200px", height: "50px" }} onClick={onAgree}>
           Agree
         </button>
-        <button
-          onClick={handleReject}
-          className="bg-red-500 text-white px-4 py-2 m-2 rounded"
-        >
+        <button style={{ width: "200px", height: "50px" }} onClick={onDisagree}>
           Disagree
         </button>
       </div>

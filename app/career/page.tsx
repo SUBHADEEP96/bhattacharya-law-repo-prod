@@ -5,7 +5,6 @@ import client from "../sanity/client";
 import withPopup from "../../wrapper/withPopup";
 const Career = () => {
   const [career, setCareer] = useState<career[]>([]);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -58,4 +57,4 @@ const Career = () => {
   );
 };
 
-export default Career;
+export default withPopup(Career);

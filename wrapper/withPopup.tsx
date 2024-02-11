@@ -3,43 +3,60 @@ import { useEffect, useState } from "react";
 import Popup from "./Popup";
 
 interface WithPopupProps {
-  userAccepted: boolean | null;
+  agreed: boolean | null;
 }
 
 const withPopup = (WrappedComponent: React.FC<WithPopupProps>) => {
   return (props: WithPopupProps) => {
     const [showPopup, setShowPopup] = useState(false);
-    const [userAccepted, setUserAccepted] = useState<boolean | null>(
-      props.userAccepted
-    );
+    const [agreed, setAgreed] = useState<boolean | null>(props.agreed);
 
     useEffect(() => {
-      const userAcceptedValue = localStorage.getItem("userAccepted");
-      const accepted = userAcceptedValue === "true";
+      const userAgreedValue = localStorage.getItem("userAgreed");
+      const agreed = userAgreedValue === "true";
 
-      if (userAcceptedValue === null || !accepted) {
+      if (userAgreedValue === null) {
         setShowPopup(true);
       }
 
-      // Set the initial value of userAccepted based on local storage
-      setUserAccepted(accepted);
+      // Set the initial value of agreed based on local storage
+      setAgreed(agreed);
     }, []);
 
-    const handlePopupClose = () => {
+    const handleAgree = () => {
+      localStorage.setItem("userAgreed", "true");
+      setAgreed(true);
       setShowPopup(false);
     };
 
-    const handleSaveUserResponse = (accepted: boolean) => {
-      localStorage.setItem("userAccepted", accepted.toString());
-      setUserAccepted(accepted);
+    const handleRefresh = () => {
+      localStorage.removeItem("userAgreed");
+      if (
+        typeof window !== "undefined" &&
+        window.location &&
+        window.location.reload
+      ) {
+        window.location.reload();
+        window.location.href = "/";
+      }
+    };
+
+    const handleDisagree = () => {
+      localStorage.setItem("userAgreed", "false");
+      setAgreed(false);
+      // Optionally, you can take additional actions when the user disagrees
+      // For example, redirect them to a different page or show a message.
+      // For simplicity, we'll just close the popup in this example.
+      // setShowPopup(false);
+      window.location.href = "/refresh";
     };
 
     return (
       <>
         {showPopup && (
-          <Popup onClose={handlePopupClose} onSave={handleSaveUserResponse} />
+          <Popup onAgree={handleAgree} onDisagree={handleDisagree} />
         )}
-        <WrappedComponent userAccepted={userAccepted} />
+        {agreed && <WrappedComponent agreed={agreed} />}
       </>
     );
   };

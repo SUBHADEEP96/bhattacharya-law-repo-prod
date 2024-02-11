@@ -2,17 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Table */
-
-/* html {
-  min-height: 100% !important;
+.space-top {
+  width: 100%;
+  height: 80px;
+  display: none;
 }
-
-body {
-  min-height: 100% !important;
-  display: flex !important;
-  flex-direction: column !important;
-} */
 
 @media (min-width: 640px) {
   table {
@@ -85,5 +79,11 @@ button {
 @keyframes spin {
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 767px) {
+  .space-top {
+    display: block;
   }
 }

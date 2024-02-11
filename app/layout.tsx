@@ -14,6 +14,7 @@ export default function RootLayout({
         <div style={{ marginBottom: "100px" }}>
           <Header />
           <Suspense fallback={<>Loading...</>}>{children}</Suspense>
+          <div className="space-top"></div>
           <Footer />
         </div>
       </body>

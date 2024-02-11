@@ -123,4 +123,4 @@ const Reportings = () => {
   );
 };
 
-export default Reportings;
+export default withPopup(Reportings);
