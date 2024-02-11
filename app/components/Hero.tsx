@@ -15,7 +15,7 @@ const Hero = () => {
                 </q>
               </i>
             </h3>
-            <p className="mb-5 leading-relaxed">
+            <p className="leading-relaxed">
               Where Justice prevails, your Rights thrive – Advocating Excellence
               in Legal Representation.
             </p>
