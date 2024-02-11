@@ -4,9 +4,6 @@ import client from "../sanity/client";
 import withPopup from "../../wrapper/withPopup";
 import { News } from "@/types/News";
 import Link from "next/link";
-interface PageProps {
-  agreed: boolean | null;
-}
 const NewsCard = (props: any): any => {
   return (
     <>

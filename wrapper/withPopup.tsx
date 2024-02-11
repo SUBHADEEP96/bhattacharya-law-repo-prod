@@ -2,14 +2,10 @@
 import { useEffect, useState } from "react";
 import Popup from "./Popup";
 
-interface WithPopupProps {
-  agreed: boolean | null;
-}
-
-const withPopup = (WrappedComponent: React.FC<WithPopupProps>) => {
-  return (props: WithPopupProps) => {
+const withPopup = (WrappedComponent: React.FC) => {
+  return () => {
     const [showPopup, setShowPopup] = useState(false);
-    const [agreed, setAgreed] = useState<boolean | null>(props.agreed);
+    const [agreed, setAgreed] = useState<boolean | null>();
 
     useEffect(() => {
       const userAgreedValue = localStorage.getItem("userAgreed");
@@ -56,7 +52,7 @@ const withPopup = (WrappedComponent: React.FC<WithPopupProps>) => {
         {showPopup && (
           <Popup onAgree={handleAgree} onDisagree={handleDisagree} />
         )}
-        {agreed && <WrappedComponent agreed={agreed} />}
+        {agreed && <WrappedComponent />}
       </>
     );
   };

@@ -4,12 +4,7 @@ import client from "../sanity/client";
 import { Partners } from "@/types/Partners";
 import withPopup from "../../wrapper/withPopup";
 import Image from "next/image";
-import Refresh from "../refresh/page";
-
-interface PageProps {
-  agreed: boolean | null;
-}
-const Partners = ({ agreed }: PageProps) => {
+const Partners = () => {
   const [partners, setPartners] = useState<Partners[]>([]);
 
   useEffect(() => {
