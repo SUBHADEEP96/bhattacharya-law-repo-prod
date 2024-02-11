@@ -64,10 +64,10 @@ const Partners = () => {
 
                   <span className="flex-grow flex flex-col sm:pl-4">
                     <span className="title-font font-medium text-gray-900">
-                      {partners[1]?.name}
+                      {partners[0]?.name}
                     </span>
                     <span className="text-gray-500 text-sm">
-                      {partners[1]?.designation.toUpperCase()}
+                      {partners[0]?.designation.toUpperCase()}
                     </span>
                   </span>
                 </a>

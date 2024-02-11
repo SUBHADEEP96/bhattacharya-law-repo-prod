@@ -64,7 +64,7 @@ const Body = () => {
                 </div>
                 <div className="flex flex-col items-center text-center justify-center">
                   <h2 className="font-medium title-font mt-4 text-gray-900 text-lg">
-                    Adv Boudhayan Bhattacharyya
+                    Boudhayan Bhattacharyya
                   </h2>
                   <div className="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
                   <p className="text-base">
@@ -78,11 +78,12 @@ const Body = () => {
                 <p className="leading-relaxed text-lg mb-4">
                   "We at "Bhattacharyyas & Associates" have a very strong
                   infrastructure in terms of library and quite a few agile, able
-                  young junior advocates who love to take up your challenges! We
-                  have our Head Office at Kolkata and two branch offices in
+                  young junior advocates who love to take up your challenges!{" "}
+                  <br />
+                  We have our Head Office at Kolkata and two branch offices in
                   North-Eastern India. We work profusely in most of the states
                   of the country. We have the right kind of balance --
-                  experience in terms of age and enthusiasm in terms of youth,
+                  experience, in terms of age and enthusiasm in terms of youth,
                   to cater for all your needs. What we do can be found under the
                   "Services" tab. In doing so, we provide onsite legal help
                   anywhere in India and in select few countries abroad. If you

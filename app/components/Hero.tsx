@@ -9,14 +9,14 @@ const Hero = () => {
             <h3 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
               <i>
                 <q>
-                  Striving for Justice, Building Trust
+                  Striving for Justice, Building Trust,
                   <br className="hidden lg:inline-block" />
-                  Your Ally in Legal Advocacy
+                  <span>&nbsp;Your Ally in Law</span>
                 </q>
               </i>
             </h3>
             <p className="mb-5 leading-relaxed">
-              Where Justice Prevails, Your Rights Thrive – Advocating Excellence
+              Where Justice prevails, your Rights thrive – Advocating Excellence
               in Legal Representation.
             </p>
           </div>
