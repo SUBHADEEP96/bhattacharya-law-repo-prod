@@ -33,7 +33,7 @@ const About = () => {
           <h1 className="sm:text-3xl text-2xl text-center font-medium title-font mb-4 mt-8 text-gray-900">
             {about[0]?.heading}
           </h1>
-          <p className="px-10 mx-auto leading-relaxed text-base">
+          <p className="px-10 mx-auto leading-relaxed text-base text-gray-600">
             {about[0]?.body}
           </p>
         </div>

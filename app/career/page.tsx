@@ -37,7 +37,7 @@ const Career = () => {
               </q>
             </h1>
             <p
-              className=" mx-auto leading-relaxed text-base"
+              className=" mx-auto leading-relaxed text-base text-gray-600"
               dangerouslySetInnerHTML={{ __html: data?.body }}
             />
             <u>
