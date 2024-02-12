@@ -75,8 +75,8 @@ const Reportings = () => {
                   </span>
                 </th>
                 <th>Name & Particulars</th>
-                <th>Citation (VST)</th>
                 <th>Citation</th>
+                <th>Eq. Citation</th>
                 <th>Court</th>
               </tr>
             </thead>
